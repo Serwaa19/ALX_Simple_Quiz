@@ -1,28 +1,34 @@
 document.addEventListener("DOMContentLoaded", function () {
 
-    // Select the submit button
+    // Retrieve the "submit-answer" button
     const submitBtn = document.getElementById("submit-answer");
 
-    // Select the feedback paragraph
+    // Retrieve the feedback paragraph
     const feedback = document.getElementById("feedback");
 
     // Create the checkAnswer function
     function checkAnswer() {
-
-        // Retrieve the selected radio option
+        
+        // Retrieve the user's selected answer
         const selectedChoice = document.querySelector("input[name='quiz']:checked");
+
+        // Correct answer
+        const correctAnswer = "4";
 
         // If no option is selected
         if (!selectedChoice) {
             feedback.textContent = "Please select an answer.";
+            feedback.style.color = "red";
             return;
         }
 
-        // Check if the selected answer is correct
-        if (selectedChoice.value === "4") {
+        // Compare user's answer with correct answer
+        if (selectedChoice.value === correctAnswer) {
+            // Feedback for correct answer
             feedback.textContent = "Correct!";
             feedback.style.color = "green";
         } else {
+            // Feedback for incorrect answer
             feedback.textContent = "Incorrect. Try again!";
             feedback.style.color = "red";
         }
@@ -32,4 +38,3 @@ document.addEventListener("DOMContentLoaded", function () {
     submitBtn.addEventListener("click", checkAnswer);
 
 });
-
