@@ -5,10 +5,18 @@ function checkAnswer() {
 
     // Retrieve the user's selected answer
     const selectedOption = document.querySelector('input[name="quiz"]:checked');
-    const userAnswer = selectedOption ? selectedOption.value : null;
 
     // Get the feedback element
     const feedback = document.getElementById('feedback');
+
+    // Check if an option is selected
+    if (!selectedOption) {
+        feedback.textContent = "Please select an answer before submitting.";
+        feedback.style.color = "orange";
+        return; // Exit the function
+    }
+
+    const userAnswer = selectedOption.value;
 
     // Compare and provide feedback
     if (userAnswer === correctAnswer) {
