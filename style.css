@@ -1,6 +1,7 @@
 body {
     font-family: Arial, sans-serif;
     padding: 20px;
+    background-color: #f5f5f5;
 }
 
 #quiz-container {
@@ -10,6 +11,7 @@ body {
     border: 1px solid #ddd;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    background-color: #fff;
 }
 
 #quiz-question {
@@ -45,10 +47,4 @@ label {
 #feedback {
     margin-top: 20px;
     font-size: 18px;
-}
-#feedback.correct {
-    color: green;
-}
-#feedback.incorrect {
-    color: red;
 }
